@@ -8,5 +8,11 @@ export default class ThemedDecorations extends React.Component {
         className: child.props.theme
       })
     })
+
+    return (
+      <div className>
+        {childrenWithExtraProp}
+      </div>
+    )
   }
 }
