@@ -3,6 +3,10 @@ import PropTypes from 'prop-types'
 
 export default class ThemedDecorations extends React.Component {
   render() {
-    return 
+    const childrenWithExtraProp = React.children.map(this.props.children, child=> {
+      return React.cloneElement(child, {
+        className: child.props.name === 
+      })
+    })
   }
 }
