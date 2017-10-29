@@ -1,17 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-export default class ThemedDecorations extends React.Component {
-  render() {
-    const childrenWithExtraProp = React.children.map(this.props.children, child=> {
-      return React.cloneElement(child, {
-        className: child.props.theme
-      })
-    })
+export default class ThemedDecoration extends React.Component {
 
-    return (
-      <div className>
-        {childrenWithExtraProp}
-      </div>
+  render(){
+  const childrenWithExtraProp = React.Children.map(this.props.children, child => {
+    return React.cloneElement(child, {
+      className: this.props.theme
+    });
+  });
+
+  return (
+    <div className>
+      {childrenWithExtraProp}
+    </div>
     )
   }
 }
